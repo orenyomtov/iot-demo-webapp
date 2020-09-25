@@ -52,7 +52,7 @@ def frame():
         color: white;
         display: grid;
         font-size: 40px;
-        background-color: blue;
+        background-color: green;
     }}
     div {{
         justify-self: center;
@@ -70,7 +70,7 @@ def frame():
 """.format(datetime.now().strftime("%H:%M:%S.%f"), ssl.OPENSSL_VERSION)
 
 def main():
-  app.run(port=9000)
+  app.run(host='0.0.0.0', port=9000)
   
 if __name__ == '__main__':
   main()
