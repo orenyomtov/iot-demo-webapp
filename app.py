@@ -1,4 +1,4 @@
-import platform
+import ssl
 from datetime import datetime
 from flask import Flask
 
@@ -67,7 +67,7 @@ def frame():
     </div>
 </body>
 </html>
-""".format(platform.python_version(), datetime.now().strftime("%H:%M:%S.%f"))
+""".format(datetime.now().strftime("%H:%M:%S.%f"), ssl.OPENSSL_VERSION)
 
 if __name__ == '__main__':
     app.run(port=9000)
