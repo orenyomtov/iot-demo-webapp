@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='iot-demo-webapp',
-    version='0.7.0',
+    version='0.8.0',
     description='Simple webapp for demo purposes.',
     py_modules=['iot-demo-webapp'],
     install_requires=['Flask'],

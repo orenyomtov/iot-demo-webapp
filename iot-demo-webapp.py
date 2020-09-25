@@ -52,7 +52,7 @@ def frame():
         color: white;
         display: grid;
         font-size: 40px;
-        background-color: green;
+        background-color: blue;
     }}
     div {{
         justify-self: center;
