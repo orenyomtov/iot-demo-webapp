@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return """
+  return """
 <!doctype html>
 <html>
 <head>
@@ -37,7 +37,7 @@ def index():
 
 @app.route('/frame')
 def frame():
-    return """
+  return """
 <!doctype html>
 <html>
 <head>
@@ -69,5 +69,8 @@ def frame():
 </html>
 """.format(datetime.now().strftime("%H:%M:%S.%f"), ssl.OPENSSL_VERSION)
 
+def main():
+  app.run(port=9000)
+  
 if __name__ == '__main__':
-    app.run(port=9000)
+  main()
