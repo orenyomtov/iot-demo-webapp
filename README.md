@@ -18,5 +18,5 @@ Polls `/frame` using ajax every 200 ms, and displays its response in an iframe.
 
 ## Versions
 
-1. [Green (0.7.0) @ cab2463](https://github.com/orenyomtov/iot-demo-webapp/commit/cab2463b1e592b5305ff1eb08823c5b4f58975ab)
-2. [Blue (0.8.0) @ fcba950](https://github.com/orenyomtov/iot-demo-webapp/commit/fcba950a6f3ce7bac6c22965ba99a8ff62946b8c)
+1. [Version 0.7.0 (Green) @ cab2463](https://github.com/orenyomtov/iot-demo-webapp/commit/cab2463b1e592b5305ff1eb08823c5b4f58975ab)
+2. [Version 0.8.0 (Blue) @ fcba950](https://github.com/orenyomtov/iot-demo-webapp/commit/fcba950a6f3ce7bac6c22965ba99a8ff62946b8c)
