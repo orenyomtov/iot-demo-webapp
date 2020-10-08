@@ -5,7 +5,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-color = 'green'
+color = 'blue'
 
 def getTimeStr():
   return datetime.now().strftime("%H:%M:%S.") + datetime.now().strftime("%f")[0]
