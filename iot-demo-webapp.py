@@ -1,9 +1,15 @@
 import ssl
+import time
 from datetime import datetime
 from flask import Flask
 
 app = Flask(__name__)
 
+color = 'green'
+
+def getTimeStr():
+  return datetime.now().strftime("%H:%M:%S.") + datetime.now().strftime("%f")[0]
+  
 @app.route('/')
 def index():
   return """
@@ -52,7 +58,7 @@ def frame():
         color: white;
         display: grid;
         font-size: 40px;
-        background-color: blue;
+        background-color: {};
     }}
     div {{
         justify-self: center;
@@ -67,7 +73,23 @@ def frame():
     </div>
 </body>
 </html>
-""".format(datetime.now().strftime("%H:%M:%S.%f"), ssl.OPENSSL_VERSION)
+""".format(color, getTimeStr(), ssl.OPENSSL_VERSION)
+
+@app.route('/json')
+def json_endpoint():
+  return """
+{{
+  "color": "{}",
+  "time_str": "{}",
+  "time_float": {},
+  "openssl_version": "{}"
+}}
+""".format(color, getTimeStr(), time.time(), ssl.OPENSSL_VERSION)
+
+@app.after_request
+def add_cors_header(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
 def main():
   app.run(host='0.0.0.0', port=9000)
