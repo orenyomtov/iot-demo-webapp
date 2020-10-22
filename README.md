@@ -16,7 +16,8 @@ Returns an JSON object with the app's color, current time, and OpenSSL version:
   "color": "blue",
   "time_str": "18:26:07.8",
   "time_float": 1602170767.85,
-  "openssl_version": "OpenSSL 1.1.1g  21 Apr 2020"
+  "openssl_version": "OpenSSL 1.1.1g  21 Apr 2020",
+  "flask_version": "0.11.1"
 }
 ```
 

@@ -2,10 +2,12 @@ import ssl
 import time
 from datetime import datetime
 from flask import Flask
+import pkg_resources
 
 app = Flask(__name__)
 
-color = 'blue'
+flask_version = pkg_resources.get_distribution("flask").version
+color = 'green'
 
 def getTimeStr():
   return datetime.now().strftime("%H:%M:%S.") + datetime.now().strftime("%f")[0]
@@ -70,10 +72,11 @@ def frame():
     <div>
         <h1>{}</h1>
         <h1>{}</h1>
+        <h1>Flask {}</h1>
     </div>
 </body>
 </html>
-""".format(color, getTimeStr(), ssl.OPENSSL_VERSION)
+""".format(color, getTimeStr(), ssl.OPENSSL_VERSION, flask_version)
 
 @app.route('/json')
 def json_endpoint():
@@ -82,9 +85,10 @@ def json_endpoint():
   "color": "{}",
   "time_str": "{}",
   "time_float": {},
-  "openssl_version": "{}"
+  "openssl_version": "{}",
+  "flask_version": "{}"
 }}
-""".format(color, getTimeStr(), time.time(), ssl.OPENSSL_VERSION)
+""".format(color, getTimeStr(), time.time(), ssl.OPENSSL_VERSION, flask_version)
 
 @app.after_request
 def add_cors_header(response):
